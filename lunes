@@ -1,1 +1,38 @@
+/*ARRAY NÚMERO REPETIDOS*/
+
+const nums = [1, 2, 3, 1];
+function repeat(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] === numbers[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+console.log(repeat(nums));
+
+/*ARRAY BINARIO UNOS CONSECUTIVOS*/
+
+const nums = [1, 0, 1, 1, 0, 1];
+function consecutive(numbers) {
+  let tmp = 0;
+  let mayor = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (numbers[i] === 1) {
+      tmp++;
+      if (tmp > mayor) {
+        mayor = tmp;
+      }
+    }
+
+    if (numbers[i] === 0) {
+      tmp = 0;
+    }
+  }
+  return mayor;
+}
+
+console.log(consecutive(nums));
 
