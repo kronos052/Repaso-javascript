@@ -1,4 +1,4 @@
-/*ARRAY NÚMERO REPETIDOS*/
+/*ARRAY NÚMEROS REPETIDOS*/
 
 const nums = [1, 2, 3, 1];
 function repeat(numbers) {
