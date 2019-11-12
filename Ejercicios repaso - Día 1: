@@ -220,3 +220,23 @@ nums.sort((a, b) => {
 });
 console.log(nums);
 
+
+/**
+ * ###################################
+ * ###### E J E R C I C I O   4 ######
+ * ###################################
+ *
+ * Crea una `arrow function` que reciba dos números por medio del
+ * `prompt`, reste ambos números, y nos devuelva el resultado.
+ * En caso de que el resultado sea negativo debe cambiarse a
+ * positivo. Este resultado se mostrará por medio de un `alert`.
+ *
+ */
+let a = prompt("dime un número");
+let b = prompt("dime otro número");
+let arrow = (a, b) => {
+  return a - b;
+};
+let resultado = arrow(a, b);
+
+alert("el resultado es " + Math.abs(resultado));
