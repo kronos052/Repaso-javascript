@@ -1,0 +1,17 @@
+/*best-time-to-buy-and-sell-stock*/
+
+let numbers = [7, 1, 5, 3, 6, 4];
+
+function maxProfit(nums) {
+  let mayorLucro = 0;
+  for (let i = 0; i < nums.length - 1; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      const lucro = nums[j] - nums[i];
+      if (lucro > mayorLucro) {
+        mayorLucro = lucro;
+      }
+    }
+  }
+  return mayorLucro;
+}
+console.log(maxProfit(numbers));
