@@ -168,3 +168,55 @@ function suma(numbers) {
 }
 let resultado = suma(facturas) + suma(propinas);
 console.log(resultado);
+
+
+/**
+ * ###################################
+ * ###### E J E R C I C I O   3 ######
+ * ###################################
+ *
+ * Dado el siguiente array de números:
+ *
+ * `nums = [100, 3, 4, 2, 10, 4, 1, 10]`
+ *s
+ * `1.` Recorre todo el array y muestra por consola cada uno de sus
+ *      elementos con la ayuda de un `for`, con la ayuda de un `map`
+ *      y con la ayuda de un `for...of`.
+ *
+ * `2.` Ordena el array de menor a mayor sin emplear `sort()`.
+ *
+ * `3.` Ordena el array de mayor a menor empleando `sort()`.
+ *
+ */
+let nums = [100, 3, 4, 2, 10, 4, 1, 10];
+
+for (let i = 0; i < nums.length; i++) {
+  console.log(nums[i]);
+}
+
+nums.map(nums => {
+  console.log(nums);
+});
+
+for (let num of nums) {
+  console.log(num);
+}
+
+function ordenar(numbers) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      if (numbers[j] > numbers[j + 1]) {
+        [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]];
+      }
+    }
+  }
+  return numbers;
+}
+
+console.log(ordenar(nums));
+
+nums.sort((a, b) => {
+  return a - b;
+});
+console.log(nums);
+
