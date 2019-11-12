@@ -18,6 +18,9 @@ console.log(maxProfit(numbers));
 
 /*EJERCICIO ROBOT*/
 
+ let moves = "UDLL";
+
+function robot(moves) {
   let up = 0;
   let down = 0;
   let right = 0;
@@ -45,3 +48,5 @@ console.log(maxProfit(numbers));
     return true;
   }
   return false;
+}
+console.log(robot(moves));
