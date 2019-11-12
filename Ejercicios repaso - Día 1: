@@ -104,4 +104,67 @@ function mediaMayor(medias) {
   return mayor;
 }
 console.log(mediaMayor(medias));
+
+
 /*Tengo que optimizarlo funciona pero la he liado un montón*/
+
+
+/**
+ * ###################################
+ * ###### E J E R C I C I O   2 ######
+ * ###################################
+ *
+ * Jorge y su familia han ido a comer a tres restaurantes distintos.
+ * La factura fue de 124€, 58€ y 268€ respectivamente.
+ *
+ * Para calcular la propina que va a dejar al camarero, Jorge ha
+ * decidido crear un sistema de calculo (una función). Quiere
+ * dejar un 20% de propina si la factura es menor que 50€, un 15%
+ * si la factura está entre 50€ y 200€, y un 10% si la factura es
+ * mayor que 200€.
+ *
+ * Al final, Jorge tendrá dos arrays:
+ *
+ * - `Array 1` Contiene las propinas que ha dejado en cada uno de
+ *    los tres restaurantes.
+ *
+ * - `Array 2` Contiene el total de lo que ha pagado en cada uno de
+ *    los restaurantes (sumando la propina).
+ *
+ * `NOTA` Para calcular el 20% de un valor, simplemente multiplica
+ *  por `0.2`. Este resultado se obtiene de dividir `20/100`. Si
+ *  quisieramos averiguar el 25% de un valor lo multiplicaríamos
+ *  por 0.25.
+ *
+ * `25 / 100 = 0.25`.
+ *
+ */
+
+let facturas = [124, 58, 268];
+
+function calculaPropinas(numbers) {
+  let nuevoArray = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < 50) {
+      nuevoArray.push(numbers[i] * 0.2);
+    } else if (numbers[i] > 200) {
+      nuevoArray.push(numbers[i] * 0.1);
+    } else {
+      nuevoArray.push(numbers[i] * 0.15);
+    }
+  }
+  return nuevoArray;
+}
+let propinas = calculaPropinas(facturas);
+console.log(propinas);
+
+function suma(numbers) {
+  let total = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    total += numbers[i];
+  }
+
+  return total;
+}
+let resultado = suma(facturas) + suma(propinas);
+console.log(resultado);
