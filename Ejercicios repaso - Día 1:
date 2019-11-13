@@ -200,17 +200,22 @@ console.log(facturaConPropina);
  */
 let nums = [100, 3, 4, 2, 10, 4, 1, 10];
 
+/* USANDO FOR:*/
 for (let i = 0; i < nums.length; i++) {
   console.log(nums[i]);
 }
 
+/*USANDO MAP*/
 nums.map(nums => {
   console.log(nums);
 });
 
+/*USANDO FOR OF*/
 for (let num of nums) {
   console.log(num);
 }
+
+/*ORDENAR SIN SORT MENOR A MAYOR*/
 
 function ordenar(numbers) {
   for (let i = 0; i < nums.length; i++) {
@@ -225,8 +230,9 @@ function ordenar(numbers) {
 
 console.log(ordenar(nums));
 
+/*ORDENAR CON SORT MAYOR A MENOR*/
 nums.sort((a, b) => {
-  return a - b;
+  return b - a;
 });
 console.log(nums);
 
