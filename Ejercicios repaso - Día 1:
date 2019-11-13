@@ -42,7 +42,7 @@ console.log(consecutive(nums));
 
 /* MOVE ZEROES*/
 
-/*Realizo el bucle al revés para en casao de tener dos ceros seguidos no saltármelo*/
+/*Realizo el bucle al revés para en caso de tener dos ceros seguidos no saltármelo*/
 /*Si el número es igual a 0 lo borro y lo pusheo al final*/ 
 const numbers = [0, 1, 0, 0, 0, 3, 0, 12];
 
@@ -83,7 +83,7 @@ let sara = [89, 120, 103];
 let laura = [116, 94, 123]; /*Nombro variables con las puntuaciones*/
 let maria = [97, 134, 105];
 
-/* función para calcular la media*/
+/* Función para calcular la media*/
 function calculaLaMedia(numbers) {
   let suma = 0;
   for (let i = 0; i < numbers.length; i++) {
@@ -92,7 +92,7 @@ function calculaLaMedia(numbers) {
   return suma / numbers.length;
 }
 
-/*llamo a la función y guardo los resultados en variables*/
+/*Llamo a la función y guardo los resultados en variables*/
 let mediaSara = calculaLaMedia(sara);
 let mediaLaura = calculaLaMedia(laura);
 let mediaMaria = calculaLaMedia(maria);
@@ -101,13 +101,13 @@ console.log(
   `La media de los equipos es: Sara ${mediaSara} Laura ${mediaLaura} y María ${mediaMaria}`
 );
 
-/*nombro un array vacío y pusheo las medias*/
+/*Nombro un array vacío y pusheo las medias*/
 let medias = [];
 medias.push(mediaSara);
 medias.push(mediaLaura);
 medias.push(mediaMaria);
 
-/*función para calcular la media mayor*/
+/*Función para calcular la media mayor*/
 function mediaMayor(medias) {
   let mayor = 0;
   for (let i = 0; i < medias.length; i++) {
@@ -153,7 +153,7 @@ console.log(`La media mayor es ${resultado}`);
 
 let facturas = [124, 58, 268];
 
-/*función para calcular solo las propinas con un array vacío en el que pusheo el resultado que cumple cada if*/
+/*Función para calcular solo las propinas con un array vacío en el que pusheo el resultado que cumple cada if*/
 function calculaPropinas(numbers) {
   let nuevoArray = [];
   for (let i = 0; i < numbers.length; i++) {
@@ -169,7 +169,8 @@ function calculaPropinas(numbers) {
 }
 let propinas = calculaPropinas(facturas);
 console.log(propinas);
-/*función para calcular las propinas más las facturas con un array vacío en el que pusheo el resultado que cumple cada if*/
+
+/*Función para calcular las propinas más las facturas con un array vacío en el que pusheo el resultado que cumple cada if*/
 function calculaFacturaConPropina(numbers) {
   let nuevoArray = [];
   for (let i = 0; i < numbers.length; i++) {
@@ -221,7 +222,7 @@ for (let num of nums) {
   console.log(num);
 }
 
-/*ORDENAR SIN SORT MENOR A MAYOR*/
+/*ORDENAR SIN SORT, MENOR A MAYOR*/
 
 function ordenar(numbers) {
   for (let i = 0; i < nums.length; i++) {
@@ -236,7 +237,7 @@ function ordenar(numbers) {
 
 console.log(ordenar(nums));
 
-/*ORDENAR CON SORT MAYOR A MENOR*/
+/*ORDENAR CON SORT, MAYOR A MENOR*/
 nums.sort((a, b) => {
   return b - a;
 });
@@ -262,4 +263,4 @@ let arrow = (a, b) => {
 let resultado = arrow(a, b);
 
 alert("el resultado es " + Math.abs(resultado));
-/*utilizo Math.abs para si el resultado da negativo volverlo positivo*/
+/*Utilizo Math.abs para qué si el resultado da negativo volverlo positivo*/
