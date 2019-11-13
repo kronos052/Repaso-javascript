@@ -50,3 +50,53 @@ function robot(moves) {
   return false;
 }
 console.log(robot(moves));
+
+
+
+/*ROBOT CON CLASES*/
+/*PENDIENTE DE ACABAR*/
+/*class Robot {
+  position = [0][0];
+  constructor(space) {
+    this.space = space;
+  }
+  moveLeft() {
+    if (this.position === 0) {
+      return false;
+    }
+    this.position--;
+    return true;
+  }
+  moveRight() {
+    if (this.position === this.space.length - 1) {
+      return false;
+    }
+    this.position++;
+    return true;
+  }
+  moveUp() {}
+  moveDown() {}
+
+  currentPosition() {
+    return this.space[this.position];
+  }
+}
+
+const mySpace = [
+  [1, 9, 5],
+  [7, 6, 3],
+  [6, 6, 8]
+];
+const myLittlePrettyRobot = new Robot(mySpace);
+
+console.log(myLittlePrettyRobot.currentPosition());
+myLittlePrettyRobot.moveRight();
+myLittlePrettyRobot.moveRight();
+myLittlePrettyRobot.moveRight();
+console.log(myLittlePrettyRobot.currentPosition());
+myLittlePrettyRobot.moveDown();
+myLittlePrettyRobot.moveDown();
+console.log(myLittlePrettyRobot.currentPosition());
+myLittlePrettyRobot.moveUp();
+console.log(myLittlePrettyRobot.currentPosition());*/
+/*PENDIENTE DE ACABAR*/
