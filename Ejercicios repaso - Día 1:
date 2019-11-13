@@ -74,9 +74,10 @@ console.log(moveZeroes(numbers));
  */
 
 let sara = [89, 120, 103];
-let laura = [116, 94, 123];
+let laura = [116, 94, 123]; /*Nombro variables con las puntuaciones*/
 let maria = [97, 134, 105];
 
+/* función para calcular la media*/
 function calculaLaMedia(numbers) {
   let suma = 0;
   for (let i = 0; i < numbers.length; i++) {
@@ -84,16 +85,23 @@ function calculaLaMedia(numbers) {
   }
   return suma / numbers.length;
 }
+
+/*llamo a la función y guardo los resultados en variables*/
 let mediaSara = calculaLaMedia(sara);
 let mediaLaura = calculaLaMedia(laura);
 let mediaMaria = calculaLaMedia(maria);
-console.log(mediaSara, mediaLaura, mediaMaria);
 
+console.log(
+  `La media de los equipos es: Sara ${mediaSara} Laura ${mediaLaura} y María ${mediaMaria}`
+);
+
+/*nombro un array vacío y pusheo las medias*/
 let medias = [];
 medias.push(mediaSara);
 medias.push(mediaLaura);
 medias.push(mediaMaria);
 
+/*función para calcular la media mayor*/
 function mediaMayor(medias) {
   let mayor = 0;
   for (let i = 0; i < medias.length; i++) {
@@ -103,11 +111,8 @@ function mediaMayor(medias) {
   }
   return mayor;
 }
-console.log(mediaMayor(medias));
-
-
-/*Tengo que optimizarlo funciona pero la he liado un montón*/
-
+let resultado = mediaMayor(medias);
+console.log(`La media mayor es ${resultado}`);
 
 /**
  * ###################################
