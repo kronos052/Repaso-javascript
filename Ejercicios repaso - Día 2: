@@ -2,19 +2,22 @@
 
 let numbers = [7, 1, 5, 3, 6, 4];
 
-function maxProfit(nums) {
-  let mayorLucro = 0;
-  for (let i = 0; i < nums.length - 1; i++) {
+function best(nums) {
+  let resultado = 0;
+  /*creo 2 bucles para restar los números en distintas posiciones*/
+  for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
-      const lucro = nums[j] - nums[i];
-      if (lucro > mayorLucro) {
-        mayorLucro = lucro;
+      /*guardo la resta en una variable temporal*/
+      let temp = nums[j] - nums[i];
+      /*cada vez que la variable temporal es mayor la guardo en la varibale resultado*/
+      if (temp > resultado) {
+        resultado = temp;
       }
     }
   }
-  return mayorLucro;
+  return resultado;
 }
-console.log(maxProfit(numbers));
+console.log(best(numbers));
 
 /*EJERCICIO ROBOT*/
 
