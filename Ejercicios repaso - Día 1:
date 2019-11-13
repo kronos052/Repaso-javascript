@@ -147,6 +147,7 @@ console.log(`La media mayor es ${resultado}`);
 
 let facturas = [124, 58, 268];
 
+/*función para calcular solo las propinas con un array vacío en el que pusheo el resultado que cumple cada if*/
 function calculaPropinas(numbers) {
   let nuevoArray = [];
   for (let i = 0; i < numbers.length; i++) {
@@ -162,18 +163,22 @@ function calculaPropinas(numbers) {
 }
 let propinas = calculaPropinas(facturas);
 console.log(propinas);
-
-function suma(numbers) {
-  let total = 0;
+/*función para calcular las propinas más las facturas con un array vacío en el que pusheo el resultado que cumple cada if*/
+function calculaFacturaConPropina(numbers) {
+  let nuevoArray = [];
   for (let i = 0; i < numbers.length; i++) {
-    total += numbers[i];
+    if (numbers[i] < 50) {
+      nuevoArray.push(numbers[i] + numbers[i] * 0.2);
+    } else if (numbers[i] > 200) {
+      nuevoArray.push(numbers[i] + numbers[i] * 0.1);
+    } else {
+      nuevoArray.push(numbers[i] + numbers[i] * 0.15);
+    }
   }
-
-  return total;
+  return nuevoArray;
 }
-let resultado = suma(facturas) + suma(propinas);
-console.log(resultado);
-
+let facturaConPropina = calculaFacturaConPropina(facturas);
+console.log(facturaConPropina);
 
 /**
  * ###################################
