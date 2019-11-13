@@ -59,16 +59,18 @@ function robot(moves) {
 console.log(robot(moves));
 
 
-
 /*ROBOT CON CLASES*/
-/*PENDIENTE DE ACABAR*/
-/*class Robot {
-  position = [0][0];
+
+/*PENDIENTE*/
+
+
+class Robot {
   constructor(space) {
     this.space = space;
+    this.position = [0][0];
   }
   moveLeft() {
-    if (this.position === 0) {
+    if (this.position === [0][0]) {
       return false;
     }
     this.position--;
@@ -85,7 +87,7 @@ console.log(robot(moves));
   moveDown() {}
 
   currentPosition() {
-    return this.space[this.position];
+    return this.space[0][0];
   }
 }
 
@@ -94,6 +96,7 @@ const mySpace = [
   [7, 6, 3],
   [6, 6, 8]
 ];
+
 const myLittlePrettyRobot = new Robot(mySpace);
 
 console.log(myLittlePrettyRobot.currentPosition());
@@ -105,5 +108,4 @@ myLittlePrettyRobot.moveDown();
 myLittlePrettyRobot.moveDown();
 console.log(myLittlePrettyRobot.currentPosition());
 myLittlePrettyRobot.moveUp();
-console.log(myLittlePrettyRobot.currentPosition());*/
-/*PENDIENTE DE ACABAR*/
+console.log(myLittlePrettyRobot.currentPosition());
