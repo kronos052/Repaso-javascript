@@ -256,3 +256,4 @@ let arrow = (a, b) => {
 let resultado = arrow(a, b);
 
 alert("el resultado es " + Math.abs(resultado));
+/*utilizo Math.abs para si el resultado da negativo volverlo positivo*/
