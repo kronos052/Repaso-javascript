@@ -2,6 +2,8 @@
 
 let numbers = [3, 1, 2, 4];
 
+/*Función, qué si el número es par lo coloca en un array vacío al principio 
+y si nó lo es lo coloca al final*/
 function parity(nums) {
   let newNumbers = [];
   for (let num of nums) {
@@ -14,4 +16,3 @@ function parity(nums) {
   return newNumbers;
 }
 console.log(parity(numbers));
-
