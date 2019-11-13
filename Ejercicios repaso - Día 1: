@@ -209,6 +209,34 @@ function calculaFacturaConPropina(numbers) {
 let facturaConPropina = calculaFacturaConPropina(facturas);
 console.log(facturaConPropina);
 
+
+
+/*OTRA FORMA:
+
+let facturas = [124, 58, 268];
+
+let nuevoArray = [];
+function calculaPropinas(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < 50) {
+      nuevoArray.push(numbers[i] * 0.2);
+    } else if (numbers[i] > 200) {
+      nuevoArray.push(numbers[i] * 0.1);
+    } else {
+      nuevoArray.push(numbers[i] * 0.15);
+    }
+  }
+  return nuevoArray;
+}
+let propinas = calculaPropinas(facturas);
+console.log(propinas);
+
+const total = nuevoArray.map((value, index) => {
+  return value + facturas[index];
+});
+console.log(total);*/
+
+
 /**
  * ###################################
  * ###### E J E R C I C I O   3 ######
