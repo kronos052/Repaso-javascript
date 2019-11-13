@@ -21,37 +21,41 @@ console.log(best(numbers));
 
 /*EJERCICIO ROBOT*/
 
- let moves = "UDLL";
+let moves = "UDLL";
+
+/*Declaramos variables para cada movimiento*/
+let up = 0;
+let down = 0;
+let right = 0;
+let left = 0;
 
 function robot(moves) {
-  let up = 0;
-  let down = 0;
-  let right = 0;
-  let left = 0;
-  const splitMoves = moves.split("");
-  for (let move of splitMoves) {
-    switch (move) {
-      case "U":
-        up++;
-        break;
-      case "D":
-        down++;
-        break;
-      case "L":
-        left++;
-        break;
-      default:
-        right++;
-    }
-  }
-  const ejeX = right - left;
-  const ejeY = up - down;
 
+  /*separamos las letras con split*/
+  const splitMoves = moves.split("");
+
+  /*cada letra añade una unidad a cada variable*/
+  for (let move of splitMoves)
+    if (move === "U") {
+      up++;
+    } else if (move === "D") {
+      down++;
+    } else if (move === "R") {
+      right++;
+    }
+  left++;
+
+/*guardamos en 2 varibales la resta horizontal y vertical */
+  let ejeX = right - left;
+  let ejeY = up - down;
+
+  /*si las 2 resta es 0 estaremos en la posicion inicial por tanto true, al contrario false*/
   if (ejeX === 0 && ejeY === 0) {
     return true;
   }
   return false;
 }
+
 console.log(robot(moves));
 
 
