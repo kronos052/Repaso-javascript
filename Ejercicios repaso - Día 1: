@@ -123,6 +123,25 @@ function mediaMayor(medias) {
 let resultado = mediaMayor(medias);
 console.log(`La media mayor es ${resultado}`);
 
+
+/*OTRA FORMA:
+let sara = [89, 120, 103];
+let laura = [116, 94, 123];
+let maria = [97, 134, 105];
+const makeMedia = nums => {
+  const total = nums.reduce((accumulator, reduceValue) => {
+    return accumulator + reduceValue;
+  });
+
+  return total / nums.length;
+};
+sara = makeMedia(sara);
+laura = makeMedia(laura);
+maria = makeMedia(maria);
+*/
+
+
+
 /**
  * ###################################
  * ###### E J E R C I C I O   2 ######
