@@ -1,5 +1,6 @@
 /*ARRAY NÚMEROS REPETIDOS*/
 
+/*utilizo 2 bucles para comparar entre números si hay 2 iguales*/
 const nums = [1, 2, 3, 1];
 function repeat(numbers) {
   for (let i = 0; i < numbers.length; i++) {
@@ -15,6 +16,8 @@ console.log(repeat(nums));
 
 /*ARRAY BINARIO UNOS CONSECUTIVOS*/
 
+/*Variable temporal donde vamos sumando unidades cada vez que es igual a 1, y vaciando la variable cuándo es igual a 0
+y otra variable final donde vamos guardando el resultado de la variable temporal (antes de vaciarla) cada vez que el resultado es mayor*/ 
 const nums = [1, 0, 1, 1, 0, 1];
 function consecutive(numbers) {
   let tmp = 0;
@@ -36,8 +39,11 @@ function consecutive(numbers) {
 
 console.log(consecutive(nums));
 
+
 /* MOVE ZEROES*/
 
+/*Realizo el bucle al revés para en casao de tener dos ceros seguidos no saltármelo*/
+/*Si el número es igual a 0 lo borro y lo pusheo al final*/ 
 const numbers = [0, 1, 0, 0, 0, 3, 0, 12];
 
 function moveZeroes(nums) {
