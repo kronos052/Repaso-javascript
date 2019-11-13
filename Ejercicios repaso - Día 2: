@@ -64,33 +64,43 @@ console.log(robot(moves));
 
 /*ROBOT CON CLASES*/
 
-/*PENDIENTE*/
-
-
 class Robot {
   constructor(space) {
     this.space = space;
-    this.position = [0][0];
+    this.Xposition = 0;
+    this.Yposition = 0;
   }
   moveLeft() {
-    if (this.position === [0][0]) {
+    if (this.Xposition === 0) {
       return false;
     }
-    this.position--;
+    this.Xposition--;
     return true;
   }
   moveRight() {
-    if (this.position === this.space.length - 1) {
+    if (this.Xposition === this.space.length - 1) {
       return false;
     }
-    this.position++;
+    this.Xposition++;
     return true;
   }
-  moveUp() {}
-  moveDown() {}
+  moveUp() {
+    if (this.Yposition === 0) {
+      return false;
+    }
+    this.Yposition--;
+    return true;
+  }
+  moveDown() {
+    if (this.Yposition === this.space.length - 1) {
+      return false;
+    }
+    this.Yposition++;
+    return true;
+  }
 
   currentPosition() {
-    return this.space[0][0];
+    return this.space[this.Yposition][this.Xposition];
   }
 }
 
@@ -112,3 +122,4 @@ myLittlePrettyRobot.moveDown();
 console.log(myLittlePrettyRobot.currentPosition());
 myLittlePrettyRobot.moveUp();
 console.log(myLittlePrettyRobot.currentPosition());
+
