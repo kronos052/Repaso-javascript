@@ -14,6 +14,8 @@ function repeat(numbers) {
 }
 console.log(repeat(nums));
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /*ARRAY BINARIO UNOS CONSECUTIVOS*/
 
 /*Variable temporal donde vamos sumando unidades cada vez que es igual a 1, y vaciando la variable cuándo es igual a 0
@@ -39,6 +41,7 @@ function consecutive(numbers) {
 
 console.log(consecutive(nums));
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* MOVE ZEROES*/
 
