@@ -1,4 +1,4 @@
-/*sort-array-by-parity*/
+EJERCICIO : /*sort-array-by-parity*/
 
 let numbers = [3, 1, 2, 4];
 
@@ -16,3 +16,36 @@ function parity(nums) {
   return newNumbers;
 }
 console.log(parity(numbers));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+EJERCICIO: /*N - Repeated Element in Size 2N Array*/
+
+let numbers = [1, 2, 2, 2, 3, 4, 5];
+
+function repeat(nums) {
+  let resultado = 0;
+  let temp = 0;
+
+  /*Recorremos el array con dos bucles para comparar los numeros*/
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      /*Si son iguales guardamos el  número  en una variable temporal la cual borramos si son distintos*/
+      if (nums[i] === nums[j]) {
+        temp = nums[i];
+        console.log(temp);
+
+        /* Guardamos en la variable final el resultado que se repite */
+        if (temp > resultado) {
+          resultado = temp;
+        }
+      }
+      if (nums[i] !== nums[j]) {
+        temp = 0;
+      }
+    }
+  }
+  return resultado;
+}
+console.log(repeat(numbers));
