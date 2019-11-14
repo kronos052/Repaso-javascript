@@ -32,6 +32,12 @@ class Titular {
     //    deseamos ingresar. De no ser asÃ­, mostrar un mensaje
     //    que diga que no tenemos suficiente dinero en el
     //    monedero.
+    // 2.2. Si tenemos suficiente dinero en el monedero, solo
+    //    queda restar en el monedero la cantidad que vamos
+    //    a ingresar.
+    // 2.3. Acceder a la propiedad "balance" de la cuenta bancaria
+    //    y sumar la cantidad a ingresar. Mostrar un mensaje de
+    //    que el ingreso ha sido realizado.
     if (this.monedero >= ammount) {
       this.monedero -= ammount;
       (account.balance += ammount),
@@ -41,13 +47,6 @@ class Titular {
            Saldo Monedero actual ${this.monedero} Euros.`
         );
     } else console.log("Saldo insuficiente en el Monedero.");
-
-    // 2.2. Si tenemos suficiente dinero en el monedero, solo
-    //    queda restar en el monedero la cantidad que vamos
-    //    a ingresar.
-    // 2.3. Acceder a la propiedad "balance" de la cuenta bancaria
-    //    y sumar la cantidad a ingresar. Mostrar un mensaje de
-    //    que el ingreso ha sido realizado.
   }
 
   withdrawal(ammount, account) {
@@ -59,6 +58,9 @@ class Titular {
     // 3.2. Si tenemos suficiente dinero en la cuenta, solo
     //    queda restar en el balance la cantidad que vamos
     //    a retirar.
+    // 3.3. Acceder a la propiedad "monedero" del titular
+    //    y sumar la cantidad retirada al monedero. Mostrar
+    //    un mensaje de que el ingreso ha sido realizado.
     if (account.balance >= ammount) {
       account.balance -= ammount;
       this.monedero += ammount;
@@ -68,10 +70,6 @@ class Titular {
          Saldo Monedero actual ${this.monedero} Euros`
       );
     } else console.log(`Saldo insuficiente en la Cuenta.`);
-
-    // 3.3. Acceder a la propiedad "monedero" del titular
-    //    y sumar la cantidad retirada al monedero. Mostrar
-    //    un mensaje de que el ingreso ha sido realizado.
   }
 
   showBalance(account) {
@@ -104,5 +102,4 @@ let retiro = parseInt(prompt("Cantidad a Retirar:"));
 manolo.withdrawal(retiro, account);
 
 // 4.
-
 console.log(`Saldo en Cuenta actual : ${manolo.showBalance(account)} Euros.`);
