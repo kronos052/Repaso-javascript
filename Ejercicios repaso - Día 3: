@@ -23,8 +23,16 @@ class Titular {
 
   openAccount(bank) {
     // 1.1 Generar un ID para la nueva cuenta bancaria.
-    let accountId = Math.floor(Math.random() * 999999999);
-    return accountId;
+    // 1.2. Acceder al array "clientes" del banco y almacenar el
+    //    nombre y el ID de la cuenta bancaria del nuevo cliente
+    // 1.3. Crear una nueva cuenta bancaria a la que debemos pasar
+    //    el nuevo ID.
+    let newId = Math.floor(Math.random() * 9999999);
+    bank.clients.push({
+      name: this.name,
+      clienteId: newId
+    });
+    return new AccountBank(newId);
   }
 
   deposit(ammount, account) {
@@ -80,26 +88,26 @@ class Titular {
   }
 }
 
-let manolo = new Titular("Manolo", "hombre", 1000);
-let santander = new Bank("Santander", "Madrid");
+const manolo = new Titular("Manolo", "hombre", 1000);
+const pedro = new Titular("Pedro", "hombre", 2000);
+const santander = new Bank("Santander", "Madrid");
 
-// 1.3. Crear una nueva cuenta bancaria a la que debemos pasar
-//    el nuevo ID.
-let account = new AccountBank(manolo.openAccount());
-console.log(account);
+const manoloAccount = manolo.openAccount(santander);
+const pedroAccount = pedro.openAccount(santander);
+console.log(manoloAccount);
+console.log(pedroAccount);
 
-// 1.2. Acceder al array "clientes" del banco y almacenar el
-//    nombre y el ID de la cuenta bancaria del nuevo cliente
-santander.clients = manolo.openAccount();
 console.log(santander);
 
 //2.
 let ingreso = parseInt(prompt("Cantidad a Ingresar:"));
-manolo.deposit(ingreso, account);
+manolo.deposit(ingreso, manoloAccount);
 
 //3.
 let retiro = parseInt(prompt("Cantidad a Retirar:"));
-manolo.withdrawal(retiro, account);
+manolo.withdrawal(retiro, manoloAccount);
 
 // 4.
-console.log(`Saldo en Cuenta actual : ${manolo.showBalance(account)} Euros.`);
+console.log(
+  `Saldo en Cuenta actual : ${manolo.showBalance(manoloAccount)} Euros.`
+);
