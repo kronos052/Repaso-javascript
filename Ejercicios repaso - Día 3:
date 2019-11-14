@@ -1,7 +1,3 @@
-////// NO CONSIGO QUE FUNCIONE BIEN ¡¡¡¡¡¡ //////
-
-
-
 class Bank {
   constructor(name, adress) {
     this.name = name;
@@ -37,12 +33,14 @@ class Titular {
     //    que diga que no tenemos suficiente dinero en el
     //    monedero.
     if (this.monedero >= ammount) {
-      this.monedero - ammount;
-      account.balance + ammount,
+      this.monedero -= ammount;
+      (account.balance += ammount),
         console.log(
-          `Ingreso realizado, Saldo actual: ${account.balance} Euros`
+          `Ingreso realizado en Cuenta:
+           Saldo Cuenta actual: ${account.balance} Euros,
+           Saldo Monedero actual ${this.monedero} Euros.`
         );
-    } else console.log("Saldo insuficiente en el monedero");
+    } else console.log("Saldo insuficiente en el Monedero.");
 
     // 2.2. Si tenemos suficiente dinero en el monedero, solo
     //    queda restar en el monedero la cantidad que vamos
@@ -62,9 +60,14 @@ class Titular {
     //    queda restar en el balance la cantidad que vamos
     //    a retirar.
     if (account.balance >= ammount) {
-      account.balance - ammount;
-      console.log(account.balance);
-    } else console.log("saldo insuficiente en Cuenta");
+      account.balance -= ammount;
+      this.monedero += ammount;
+      console.log(
+        `Ingreso realizado en el Monedero:
+         Saldo Cuenta actual:${account.balance} Euros,
+         Saldo Monedero actual ${this.monedero} Euros`
+      );
+    } else console.log(`Saldo insuficiente en la Cuenta.`);
 
     // 3.3. Acceder a la propiedad "monedero" del titular
     //    y sumar la cantidad retirada al monedero. Mostrar
@@ -93,13 +96,13 @@ santander.clients = manolo.openAccount();
 console.log(santander);
 
 //2.
-let ingreso = 50;
+let ingreso = parseInt(prompt("Cantidad a Ingresar:"));
 manolo.deposit(ingreso, account);
 
 //3.
-let retiro = 10;
+let retiro = parseInt(prompt("Cantidad a Retirar:"));
 manolo.withdrawal(retiro, account);
 
 // 4.
 
-console.log(`Saldo actual: ${manolo.showBalance(account)} Euros`);
+console.log(`Saldo en Cuenta actual : ${manolo.showBalance(account)} Euros.`);
