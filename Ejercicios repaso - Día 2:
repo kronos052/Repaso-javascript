@@ -64,12 +64,17 @@ console.log(robot(moves));
 
 /*ROBOT CON CLASES*/
 
+/*creamos la clase Robot con propiedad space a la cuál le pasaremos los arrays al instanciar*/
 class Robot {
   constructor(space) {
     this.space = space;
+    
+/*creamos 2 variables que indicarán en que eje se mueve el robot*/
     this.Xposition = 0;
     this.Yposition = 0;
   }
+  
+/*método que si es igual a 0 no podrá moverse si no lo es sumará una unidad lo que siginifica que se moverá de posicion a la izquierda del array.*/
   moveLeft() {
     if (this.Xposition === 0) {
       return false;
@@ -77,6 +82,8 @@ class Robot {
     this.Xposition--;
     return true;
   }
+  
+ /* método que si es igual al último número del array no podrá moverse si no lo es restará una unidad por lo que se moverá a la izquierda*/
   moveRight() {
     if (this.Xposition === this.space.length - 1) {
       return false;
@@ -84,6 +91,8 @@ class Robot {
     this.Xposition++;
     return true;
   }
+  
+  /*método que si es igual a 0 no podrá moverse si no lo es restará una unidad con lo cual subirá una posición en el array*/
   moveUp() {
     if (this.Yposition === 0) {
       return false;
@@ -91,6 +100,8 @@ class Robot {
     this.Yposition--;
     return true;
   }
+  
+  /*método que si es igual al último número del array no podrá moverse si no lo es sumará una unidad con lo que bajará una unidad en el array*/
   moveDown() {
     if (this.Yposition === this.space.length - 1) {
       return false;
@@ -98,7 +109,8 @@ class Robot {
     this.Yposition++;
     return true;
   }
-
+  
+/*método que nos dá la posicion actual en los dos ejes*/
   currentPosition() {
     return this.space[this.Yposition][this.Xposition];
   }
@@ -110,8 +122,10 @@ const mySpace = [
   [6, 6, 8]
 ];
 
+/*instanciamos la clase*/
 const myLittlePrettyRobot = new Robot(mySpace);
 
+/*utilizamos los diferentes métodos para mover el robot y mostramos resultados*/
 console.log(myLittlePrettyRobot.currentPosition());
 myLittlePrettyRobot.moveRight();
 myLittlePrettyRobot.moveRight();
