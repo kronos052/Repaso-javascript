@@ -1,1 +1,105 @@
+////// NO CONSIGO QUE FUNCIONE BIEN ¡¡¡¡¡¡ //////
 
+
+
+class Bank {
+  constructor(name, adress) {
+    this.name = name;
+    this.adress = adress;
+    this.clients = [];
+  }
+}
+
+class AccountBank {
+  constructor(id) {
+    this.balance = 0;
+    this.id = id;
+  }
+}
+
+class Titular {
+  constructor(name, gender, monedero) {
+    this.name = name;
+    this.gender = gender;
+    this.monedero = monedero;
+    this.id = Math.floor(Math.random() * 999999999);
+  }
+
+  openAccount(bank) {
+    // 1.1 Generar un ID para la nueva cuenta bancaria.
+    let accountId = Math.floor(Math.random() * 999999999);
+    return accountId;
+  }
+
+  deposit(ammount, account) {
+    // 2.1. Comprobar si en el monedero tenemos la cantidad que
+    //    deseamos ingresar. De no ser asÃ­, mostrar un mensaje
+    //    que diga que no tenemos suficiente dinero en el
+    //    monedero.
+    if (this.monedero >= ammount) {
+      this.monedero - ammount;
+      account.balance + ammount,
+        console.log(
+          `Ingreso realizado, Saldo actual: ${account.balance} Euros`
+        );
+    } else console.log("Saldo insuficiente en el monedero");
+
+    // 2.2. Si tenemos suficiente dinero en el monedero, solo
+    //    queda restar en el monedero la cantidad que vamos
+    //    a ingresar.
+    // 2.3. Acceder a la propiedad "balance" de la cuenta bancaria
+    //    y sumar la cantidad a ingresar. Mostrar un mensaje de
+    //    que el ingreso ha sido realizado.
+  }
+
+  withdrawal(ammount, account) {
+    // 3.1. Comprobar si en la propiedad "balance" de nuestra
+    //    cuenta tenemos la cantidad que deseamos retirar.
+    //    De no ser asÃ­, mostrar un mensaje que diga que
+    //    no tenemos suficiente dinero en la cuenta.
+
+    // 3.2. Si tenemos suficiente dinero en la cuenta, solo
+    //    queda restar en el balance la cantidad que vamos
+    //    a retirar.
+    if (account.balance >= ammount) {
+      account.balance - ammount;
+      console.log(account.balance);
+    } else console.log("saldo insuficiente en Cuenta");
+
+    // 3.3. Acceder a la propiedad "monedero" del titular
+    //    y sumar la cantidad retirada al monedero. Mostrar
+    //    un mensaje de que el ingreso ha sido realizado.
+  }
+
+  showBalance(account) {
+    // 4.1. Acceder a la propiedad "balance" de la cuenta y
+    //    mostrar un mensaje que nos indique nuestro saldo
+    //    actual.
+    return account.balance;
+  }
+}
+
+let manolo = new Titular("Manolo", "hombre", 1000);
+let santander = new Bank("Santander", "Madrid");
+
+// 1.3. Crear una nueva cuenta bancaria a la que debemos pasar
+//    el nuevo ID.
+let account = new AccountBank(manolo.openAccount());
+console.log(account);
+
+// 1.2. Acceder al array "clientes" del banco y almacenar el
+//    nombre y el ID de la cuenta bancaria del nuevo cliente
+santander.clients = manolo.openAccount();
+console.log(santander);
+
+//2.
+let ingreso = 50;
+manolo.deposit(ingreso, account);
+
+//3.
+let retiro = 10;
+manolo.withdrawal(retiro, account);
+
+// 4.
+
+console.log(`Saldo actual: ${manolo.showBalance(account)} Euros`);
